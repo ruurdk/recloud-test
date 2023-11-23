@@ -16,6 +16,8 @@ To do this, we provide automation (terraform) to deploy the infrastructure, scri
 
 Go into the automation folder and 'terraform apply'. Note that this may on the first run take 10-15 minutes as dedicated infrastructure is provisioned. Changes to databases & configuration will be much quicker afterwards.
 
-### Run scripts
+### Set-up data & Indices
 
-Go into the scripts folder and run the scripts against the public endpoint.
+For local testing/demo, read [this](data/README.md).
+
+For remote (at scale) setup, do the same as above, but with Faker and RedisInsight against the public endpoint.
