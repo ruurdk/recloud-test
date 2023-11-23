@@ -1,9 +1,21 @@
-﻿// See https://aka.ms/new-console-template for more information
-using Newtonsoft.Json;
+﻿using CommandLine;
 
-Console.WriteLine("Address data faker");
+class Program
+{
+    static void Main(string[] args)
+    {
+        Console.WriteLine("Address data faker");
+        
+        Parser.Default.ParseArguments<Options>(args)
+            .WithParsed(options =>
+            {
+                Console.WriteLine("Generating {0} addresses", options.NumberOfAddresses);
+                var a = new AddressFaker().Generate(options.NumberOfAddresses);
+                
+                Console.WriteLine("Connecting to Redis instance at {0}:{1}", options.Host, options.Port);
 
-var a = new AddressFaker().Generate(1000);
 
-var a_j = JsonConvert.SerializeObject(a.First());
-Console.WriteLine(a_j);
+            }
+            );   
+    }
+}
