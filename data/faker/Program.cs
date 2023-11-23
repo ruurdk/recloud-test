@@ -11,9 +11,11 @@ class Program
         Parser.Default.ParseArguments<Options>(args)
             .WithParsed(options =>
             {
-                Console.WriteLine("Connecting to Redis instance at {0}:{1}", options.Host, options.Port);
+                var connectionstring = string.IsNullOrEmpty(options.ConnectionString) ?
+                                       string.Format("{0}:{1}", options.Host, options.Port) : options.ConnectionString;
+                Console.WriteLine("Connecting to Redis instance at {0}", connectionstring);
                 try {
-                    ConnectionMultiplexer redis = ConnectionMultiplexer.Connect(string.Format("{0}:{1}", options.Host, options.Port));
+                    ConnectionMultiplexer redis = ConnectionMultiplexer.Connect(connectionstring);
                     
                     var addresses = new List<Address>();
 

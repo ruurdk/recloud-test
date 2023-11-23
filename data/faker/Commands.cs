@@ -9,4 +9,7 @@ public class Options
     public string? Host { get; set; }
     [Option('p', Required = false, HelpText = "Port number", Default = 6379)]
     public int Port { get; set; }
+
+    [Option('s', Required = false, HelpText = "Complete connectionstring for cases where host + port is not enough - overrides host + port")]
+    public string? ConnectionString { get; set; }
 }
