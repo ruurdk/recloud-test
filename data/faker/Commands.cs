@@ -1,3 +1,4 @@
+using System.Data;
 using CommandLine;
 
 public class Options
@@ -12,4 +13,7 @@ public class Options
 
     [Option('s', Required = false, HelpText = "Complete connectionstring for cases where host + port is not enough - overrides host + port")]
     public string? ConnectionString { get; set; }
+
+    [Option('o', Required = false, Default = 0, HelpText = "Starting index offset")]
+    public int Offset { get; set; }
 }
