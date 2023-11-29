@@ -18,7 +18,7 @@ resource "rediscloud_subscription" "subscription-resource" {
     region {
       region = "eu-west-1"
       multiple_availability_zones = false
-      networking_deployment_cidr = "10.0.0.0/24"
+      networking_deployment_cidr = "10.0.1.0/24"
       preferred_availability_zones = []
     }
   }

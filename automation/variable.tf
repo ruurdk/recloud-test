@@ -14,7 +14,7 @@ variable "database-name" {
 
 // sane defaults for JSON + Search (duplicated between creation plan + database as we have only 1 DB in this sub.)
 variable "memorylimit" {
-    default = "5"
+    default = "50"
 }
 
 variable "throughput_measurement_by" {
@@ -33,4 +33,3 @@ variable "modules" {
     type = list(string)
     default = ["RedisJSON", "RediSearch"]
 }
-

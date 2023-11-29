@@ -3,7 +3,7 @@ resource "rediscloud_subscription_database" "database-resource" {
     subscription_id = rediscloud_subscription.subscription-resource.id
     name = var.database-name
     memory_limit_in_gb = var.memorylimit
-    data_persistence = "aof-every-write"
+    data_persistence = "aof-every-1-second"
     data_eviction = "noeviction"
     throughput_measurement_by = var.throughput_measurement_by
     throughput_measurement_value = var.throughput_measurement_value
