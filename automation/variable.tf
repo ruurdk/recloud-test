@@ -14,7 +14,7 @@ variable "database-name" {
 
 // sane defaults for JSON + Search (duplicated between creation plan + database as we have only 1 DB in this sub.)
 variable "memorylimit" {
-    default = "75"
+    default = "100"
 }
 
 variable "throughput_measurement_by" {
@@ -22,11 +22,11 @@ variable "throughput_measurement_by" {
 }
 
 variable "throughput_measurement_value" {
-  default = "3"
+  default = "4"
 }
 
 variable "replication" {
-  default = true
+  default = false
 }
 
 variable "modules" {
